@@ -9,12 +9,9 @@ class Solution(TextSolution):
     _year = 2024
     _day = 1
 
-    @answer(605218616)
+    @answer(2192892)
     def part_1(self) -> int:
-        
-        c = []
-        for d in self.input.split():
-            c.append(int(d))
+        c = [int(d) for d in self.input.split()]
 
         a = c[::2]
         b = c[1::2]
@@ -28,7 +25,7 @@ class Solution(TextSolution):
         return sum(total)
         
 
-    @answer(204826471269726238)
+    @answer(22962826)
     def part_2(self) -> int:        
         c = [int(d) for d in self.input.split()]
 
