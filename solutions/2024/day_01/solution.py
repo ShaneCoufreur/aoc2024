@@ -3,13 +3,13 @@
 # puzzle prompt: https://adventofcode.com/2024/day/1
 
 from ...base import TextSolution, answer
-
+from collections import Counter
 
 class Solution(TextSolution):
     _year = 2024
     _day = 1
 
-    @answer(2192892)
+    @answer(605218616)
     def part_1(self) -> int:
         
         c = []
@@ -28,15 +28,26 @@ class Solution(TextSolution):
         return sum(total)
         
 
-    @answer(22962826)
+    @answer(204826471269726238)
     def part_2(self) -> int:        
-        c = []
-        for d in self.input.split():
-            c.append(int(d))
+        c = [int(d) for d in self.input.split()]
 
         a = c[::2]
         b = c[1::2]
-        total = []
-        for x in a:
-            total.append(b.count(x) * x)
-        return sum(total)
+
+        # total = 0
+        # for i, x in enumerate(a):
+        #    #print(f"Calculating for {i} of {len(a)}")
+        #    total += b.count(x) * x
+
+        # return total
+
+        # # return total
+        c = Counter(b)
+
+        s = 0
+        for i in a:
+            s += c[i] * i
+
+
+        return s
