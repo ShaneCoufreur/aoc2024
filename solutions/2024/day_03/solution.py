@@ -13,7 +13,7 @@ class Solution(TextSolution):
 
     @answer(157621318)
     def part_1(self) -> int:
-        matches = re.findall("mul\\([0-9]{1,9},[0-9]{1,9}\\)", self.input)
+        matches = re.findall("mul\\([0-9]{1,3},[0-9]{1,3}\\)", self.input)
         s = 0
         for m in matches:
             s += eval(m)
@@ -21,7 +21,7 @@ class Solution(TextSolution):
 
     @answer(79845780)
     def part_2(self) -> int:
-        matches = re.findall("mul\\([0-9]{1,9},[0-9]{1,9}\\)|don\\'t|do", self.input)
+        matches = re.findall("mul\\([0-9]{1,3},[0-9]{1,3}\\)|don\\'t|do", self.input)
         print(matches)
         s = 0
         enabledMul = True
